@@ -73,11 +73,11 @@
     <main class="flex-shrink-0 main-bg">
 
         {% block content %}
-        <!-- Content Goes here -->
         {% endblock content %}
     </main>
 
     <!-- Footer -->
+
     <footer class="text-center text-white mt-auto" style="background-color: #f1f1f1;">
         <!-- Grid container -->
         <div class="container pt-2">
@@ -86,7 +86,8 @@
             <!-- Facebook -->
             <a
               class="btn btn-link btn-floating btn-lg text-dark m-1"
-              href="#!"
+              href="https://www.facebook.com"
+              aria-label="Link to my Facebook page"
               role="button"
               data-mdb-ripple-color="dark"
               ><i class="fab fa-facebook-f"></i
@@ -95,7 +96,8 @@
             <!-- Twitter -->
             <a
               class="btn btn-link btn-floating btn-lg text-dark m-1"
-              href="#!"
+              href="https://www.twitter.com"
+              aria-label="Link to my Twitter page"
               role="button"
               data-mdb-ripple-color="dark"
               ><i class="fab fa-twitter"></i
@@ -104,7 +106,8 @@
             <!-- Instagram -->
             <a
               class="btn btn-link btn-floating btn-lg text-dark m-1"
-              href="#!"
+              href="https://www.instagram.com"
+              aria-label="Link to my Instagram page"
               role="button"
               data-mdb-ripple-color="dark"
               ><i class="fab fa-instagram"></i
@@ -113,29 +116,29 @@
             <!-- Linkedin -->
             <a
               class="btn btn-link btn-floating btn-lg text-dark m-1"
-              href="#!"
+              href="https://www.linkedin.com"
+              aria-label="Link to my Linkedin page"
               role="button"
               data-mdb-ripple-color="dark"
               ><i class="fab fa-linkedin"></i
             ></a>
           </section>
-          <!-- Section: Social media -->
         </div>
-        <!-- Grid container -->
       
         <!-- Copyright -->
         <div class="text-center text-light p-3" style="background-color: black;">
           © 2022 Copyright
           <a class="text-light" href="#">TraderPro</a>
         </div>
-        <!-- Copyright -->
     </footer>
+
+    <!-- JS script that removes an "alert-message" automaticly in 3.5s -->
     <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();
-        }, 2500);
+        }, 3500);
     </script>
 </body>
 
