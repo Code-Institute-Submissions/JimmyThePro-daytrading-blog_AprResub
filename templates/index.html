@@ -5,26 +5,25 @@
 <div class="container-fluid">
     <div class="row">
 
-<!-- Jumbotron -->
+<!-- Main background image -->
 <div
   class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');"
 >
-  <h1 class="mb-3 h2">Jumbotron</h1>
+  <h1 class="mb-3 h2">Daytrading Blog</h1>
 
   <p>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+    Everything you need to know about daytrading.
   </p>
 </div>
-<!-- Jumbotron -->
 
-        <!-- Blog Entries Column -->
+        <!-- Blogpost column -->
 
         <div class="col-8 mt-3 left mx-auto">
-            <div class="row mx-auto">
+            <div class="row">
                 {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-6 mx-auto">
+                    <div class="card mb-6">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
@@ -47,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:2 %}
             </div>
             <div class="row">
                 {% endif %}
