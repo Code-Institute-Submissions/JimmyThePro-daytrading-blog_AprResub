@@ -156,4 +156,22 @@ body {
     background-color: #000000;
 }
 
+.page-link {
+    background-color: #F08A5D;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.page-link:hover,
+.page-link:active {
+    background-color: #f0895dbb;
+    color: #fff;
+}
+
 
