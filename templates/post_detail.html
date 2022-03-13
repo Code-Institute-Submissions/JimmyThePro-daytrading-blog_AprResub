@@ -9,7 +9,8 @@
             <div class="col-md-12">
                 {% if "placeholder" in post.featured_image.url %}
                 <!-- Placeholder image for blogpost -->
-                <img src="https://res.cloudinary.com/jimmythepro/image/upload/v1647166056/stock_chart_y96jy8.jpg" class="img">
+                <img src="https://res.cloudinary.com/jimmythepro/image/upload/v1647166056/stock_chart_y96jy8.jpg"
+                    class="img">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" width="100%" class="img">
                 {% endif %}
