@@ -35,7 +35,7 @@ body {
 }
 
 .likerow {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .f-bg {
@@ -106,7 +106,6 @@ body {
 
 .post-title {
     margin-top: 2%;
-    margin-left: 5%;
 }
 
 .post-link {
@@ -115,7 +114,6 @@ body {
 }
 
 .post-subtitle {
-    margin-left: 5%;
     color: lightgray;
 }
 
@@ -182,6 +180,8 @@ body {
     background-color: #f0895dbb;
     color: #fff;
 }
+
+/* icons */
 
 .fa-heart {
     color: #ff4000

@@ -4,10 +4,11 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Blogpost image with title/author/date -->
+
 <div class="post-image">
     <div class="container">
-        <div class="row">
-
+        <div class="row  text-center">
             <div class="col-md-12">
                 {% if "placeholder" in post.featured_image.url %}
                 <!-- Placeholder image for blogpost -->
@@ -25,6 +26,8 @@
     </div>
 </div>
 
+<!-- Blogpost content area -->
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 card mb-4 mt-3 left top mx-auto">
@@ -32,10 +35,10 @@
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
+
+                <!-- Like/unlike blogposts area -->
+
                 <div class="row content-center likerow">
-
-                    <!-- Like/unlike blogposts area -->
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
@@ -63,7 +66,6 @@
                     </div>
 
                     <!-- Show number of comments on blogposts -->
-
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
