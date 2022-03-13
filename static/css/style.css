@@ -155,14 +155,12 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
     background: transparent;
     border: none;
 }
@@ -183,4 +181,12 @@ body {
 .page-link:active {
     background-color: #f0895dbb;
     color: #fff;
+}
+
+.fa-heart {
+    color: #ff4000
+}
+
+.fa-comments {
+    color: #009600
 }

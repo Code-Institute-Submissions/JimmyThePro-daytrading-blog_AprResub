@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 
 {% load crispy_forms_tags %}
 
@@ -10,9 +12,9 @@
                 {% if "placeholder" in post.featured_image.url %}
                 <!-- Placeholder image for blogpost -->
                 <img src="https://res.cloudinary.com/jimmythepro/image/upload/v1647166056/stock_chart_y96jy8.jpg"
-                    class="img">
+                    class="img" alt="blogpost image">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%" class="img">
+                <img src=" {{ post.featured_image.url }}" width="100%" class="img" alt="blogpost image">
                 {% endif %}
             </div>
             <div class="col-md-12">
@@ -58,7 +60,6 @@
                             {% endif %}
                             <span class="text-secondary"> {{ post.number_of_likes }} </span>
                         </strong>
-
                     </div>
 
                     <!-- Show number of comments on blogposts -->

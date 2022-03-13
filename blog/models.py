@@ -40,6 +40,12 @@ class Post(models.Model):
         """
         return self.likes.count()
 
+    def number_of_comments(self):
+        """
+        Number_of_likes method.
+        """
+        return self.comments.count()
+
 
 class Comment(models.Model):
     """
