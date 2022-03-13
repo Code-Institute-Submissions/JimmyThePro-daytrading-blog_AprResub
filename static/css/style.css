@@ -2,7 +2,9 @@ body {
     background-color: #F9FAFC;
 }
 
-.brand {
+/* headings/logo and small fixes */
+
+.logo {
     font-family: Open sans, sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
@@ -23,6 +25,32 @@ body {
 .main-h2 {
     text-shadow: 2px 2px #000000;
 }
+
+.text-italic {
+    font-style: italic;
+}
+
+.content-center {
+    justify-content: center;
+}
+
+.likerow {
+    margin-top: 40px;
+}
+
+.f-bg {
+    background-color: #f1f1f1;
+}
+
+.cr-bg {
+    background-color: #000000;
+}
+
+#div_id_body {
+    margin-bottom: 10px;
+}
+
+/* backgrounds and images style */
 
 .light-bg {
     background-color: #fff;
@@ -53,77 +81,11 @@ body {
     background-color: #F08A5D;
 }
 
-.author {
-    color: #000000;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.post-link {
-    text-decoration: none;
-    color: #445261;
-}
-
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
-
-.post-title {
-    margin-top: 2%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
-.btn-signup {
-    background-color: #F08A5D;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #f0895dbb;
-    color: #fff;
-}
-
-.link {
-    color: #F08A5D;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
-
-.content-center {
-    justify-content: center;
-}
-
 .bg-image {
     background-color: #000000;
     box-shadow: inset 0px 0px 100px rgba(0,0,0,0.9);
     background-position: center;
     background-size: cover;
-
 }
 
 .img {
@@ -140,20 +102,69 @@ body {
     border-radius: 5px;
 }
 
-#div_id_body {
-    margin-bottom: 10px;
+/* links */
+
+.post-title {
+    margin-top: 2%;
+    margin-left: 5%;
 }
 
-.likerow {
-    margin-top: 40px;
+.post-link {
+    text-decoration: none;
+    color: #445261;
 }
 
-.f-bg {
-    background-color: #f1f1f1;
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
 }
 
-.cr-bg {
-    background-color: #000000;
+.post-link:hover,
+.page-link {
+    color: #F08A5D;
+}
+
+.link {
+    color: #F08A5D;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+.author {
+    color: #000000;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+/* buttons */
+
+.btn-signup {
+    background-color: #F08A5D;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #f0895dbb;
+    color: #fff;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
 }
 
 .page-link {
@@ -173,5 +184,3 @@ body {
     background-color: #f0895dbb;
     color: #fff;
 }
-
-

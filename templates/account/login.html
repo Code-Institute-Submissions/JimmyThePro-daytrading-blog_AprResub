@@ -7,13 +7,15 @@
 
 {% block content %}
 
+<!-- Login area and a signup link for new users -->
+
 <div class="container">
   <div class="row d-flex justify-content-center text-center">
     <div class="col-md-8 mt-3">
       <h3>{% trans "Login" %}</h3>
 
-      <p>{% blocktrans %}Welcome back to the TraderPro blog. To leave a comment or like a post, please login. <br>
-        (Create a new account here: <a class="link" href="{{ signup_url }}">Signup</a>)
+      <p>{% blocktrans %}Welcome back to the TraderPro blog. To leave a comment/like a blogpost, please login. <br>
+        (Create a new account here: <a class="link active" href="{{ signup_url }}">Signup</a>)
         {% endblocktrans %}</p>
     </div>
   </div>

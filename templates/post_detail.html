@@ -8,7 +8,8 @@
 
             <div class="col-md-12">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" class="img">
+                <!-- Placeholder image for blogpost -->
+                <img src="https://res.cloudinary.com/jimmythepro/image/upload/v1647166056/stock_chart_y96jy8.jpg" class="img">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" width="100%" class="img">
                 {% endif %}
@@ -30,6 +31,8 @@
                 </p>
                 <div class="row content-center likerow">
 
+                    <!-- Like/unlike blogposts area -->
+
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
@@ -37,11 +40,13 @@
                                 {% csrf_token %}
                                 {% if liked %}
 
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
 
                                 {% else %}
 
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
 
                                 {% endif %}
 
@@ -52,14 +57,18 @@
                             {% endif %}
                             <span class="text-secondary"> {{ post.number_of_likes }} </span>
                         </strong>
-                        
+
                     </div>
+
+                    <!-- Show number of comments on blogposts -->
+
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
+
                 </div>
             </div>
         </div>
@@ -69,6 +78,9 @@
             <hr>
         </div>
     </div>
+
+    <!-- Comment area -->
+
     <div class="row">
         <div class="col-md-8 card mb-4 mt-3 ">
             <h3>Comments:</h3>
@@ -88,7 +100,7 @@
         </div>
         <div class="col-md-4 card mb-4 mt-3 ">
             <div class="card-body">
-                
+
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Success! Your comment is awaiting approval.
