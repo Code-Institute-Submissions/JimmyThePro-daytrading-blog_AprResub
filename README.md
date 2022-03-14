@@ -1,108 +1,217 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **TraderPro**
+"TraderPro" is a blog about daytrading. This blog is for people that want to follow my daytrading journey, and of course for all daytraders out there.
+This blog will have blogposts/information about daytrading added by me weekly, so this blog will have alot of posts about daytrading in the future... so bookmark this blog now: https://daytradingblog.herokuapp.com/
+<br/><br/>
 
-Welcome JimmyThePro,
+![blog will work in any media browser](static/images/responsive_design.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Features
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+* **Header navigation bar**
 
-## Gitpod Reminders
+    - The navigation bar includes links to Home, Signup and Login (and a logo-link), and also a short message.
+    - This full responsive navigation bar allow all users to easy navigate to all pages on this site, without the need of the "back" button.
+    - This bar also have a hover effect that change color with mousehover.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![navigation bar](static/images/navbar.png)
 
-`python3 -m http.server`
+* **Main image**
 
-A blue button should appear to click: _Make Public_,
+    - The main image is a picture of big buildings (associates to wallstreet etc).
+    - And this image also got an eye catching overlay text, that tell the user that he/she is on the perfect site he/she was looking for.
 
-Another blue button should appear to click: _Open Browser_.
+![main image on homepage](static/images/main_image.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* **Blogpost section**
 
-A blue button should appear to click: _Make Public_,
+    - This section got 6 blogposts with title and excerpt text under the image. This will let the user to click on a blogpost he/she is interested in to read the fully information.
+    - Below the images there's 'bloglikes' count, and 'blogcomment' count, so users can see the most engaging posts.
+    - All titles/excerpts on this section got a link, and this link will redirect the user to the full information about the title.
 
-Another blue button should appear to click: _Open Browser_.
+* **Footer section**
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    - The footer section got 4 social media pictures with links that opens up in a new tab (facebook, twitter, instagram, linkedin).
+    - This section also have a copyright text (under the social media pictures), and also a link to main page.
 
-To log into the Heroku toolbelt CLI:
+![footer image](static/images/footer.png)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+* **Signup**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+    - The 'Signup' page have 4 inputs that the user will need to fill in (email is optional), and a Signup button.
+    - Below the Signup text there's a link to the Login page if user already have an account.
 
-------
+![signup image](static/images/signup.png)
 
-## Release History
+* **Login**
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    - The 'Login' page have 2 inputs that a user need to fill in ('username' and 'password') and click the 'Login' button to login.
+    - Below the Login text there's a link to the Signup page, if user want to create an account.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![login image](static/images/login.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+* **Logout**
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+    - When a user want to logout, he/she can just click the 'Logout' button in the navbar.
+    - The user will get a confirmation text if he/she really want to logout.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![logout image](static/images/logout.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+* **Blogpost page**
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+    - First there is a blogpost image that is relevant to the topic.
+    - A blogpost title is shown below the image, and also who the 'author' is, and even a 'date' when the post was published.
+    - Below the title the user can read the full blogpost text.
+    - And below the text there is a 'like-button' that also show the like-counts (formed as a heart), and a 'comment' count.
+    - At bottom there's a comment section. Here will all the comments that are posted on a specific blogpost be shown. If a user is logged in, he/she can write a comment (a comment need to be approved by an admin user). If user is not logged in, he/she can only read comments.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![blogpost image](static/images/blogpost_image.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![blogpost text and like/comment count](static/images/blogpost_text.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![blogpost comments](static/images/comment_section.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Django administration
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* **Admin panel**
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+    - Create posts: As an admin, you can choose to create a blog post. You can easily save it as a draft and continue on it later - until you are ready to publish it.
+    - Update posts: As an admin, you can easy update a blog post if you need to change something.
+    - Delete posts: As an admin, you can easy delete a blog post if you need to.
+    - Approve comments: As an admin, you choose which comments you want to be shown on the website.
+    - Delete comments: As an admin, you can delete comments whether they are approved or not.
+    - Filter blog posts: As an admin, you can filter the blog posts by date.
+    - Delete users: As an admin, you can delete users if you need to.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![django admin panel](static/images/django.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## UX
 
-------
+A daytrader will find this blog as a perfect match!
+I bet the user will read all the blog posts.
+<br/><br/>
 
-## FAQ about the uptime script
+* **User stories**
 
-**Why have you added this script?**
+    - NEW USER: I am interested in Daytrading and wanna know more about this lifestyle!
+    - RETURNING USER: User can come back weekly, as new blogposts are added once a week.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+    - Site pagination: As a Site User I can view a list of posts so that I can select which post to view.
+    - View post list: As a Site User I can view a list of posts so that I can select one to read.
+    - Open a post: As a Site User I can click on a post so that I can read the full text.
+    - View likes: As a Site User I can view the number of likes on each post so that I can see which is the most popular or viral.
+    - View comments: As a Site User I can view comments on an individual post so that I can read the conversation.
+    - Account registration: As a Site User I can register an account so that I can comment and like.
+    - Comment on a post: As a Site User I can leave comments on a post so that I can be involved in the conversation.
+    - Like/Unlike: As a Site User I can like or unlike a post so that I can interact with the content.
+<br/><br/>
 
-**How will this affect me?**
+* **Site goal**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+    - The goal of the blog is to inform users about daytrading.
+<br/><br/>
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* **Business owner**
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+    - I want to give my daytrading knowledge to my users, and build up a big daytrading community.
+    - This blog will add alot of positive vibes to the users.
+<br/><br/>
 
-**So….?**
+## Testing
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* **Validator testing**
 
-**Can I opt out?**
+    - HTML: No errors when checked with "W3C validator": https://validator.w3.org/
+    - CSS: No errors when checked with "Jigsaw validator": https://jigsaw.w3.org/css-validator/
+    - Javascript: No errors when checked with: https://jshint.com/
+    - Python: No errors when checked with (all .py files checked): http://pep8online.com/
+    - This site is responsive. Different browsers work with this site (firefox, chrome, safari, edge). All links and buttons work.
+    - 'Lighthouse' with site tested, with good score.
+<br/><br/>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![W3](static/images/validatorw3.png)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+![Jigsaw](static/images/jigsaw.png)
 
-**Anything more?**
+![Jigsaw](static/images/jshint.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+![Pep8online](static/images/pep8.png)
 
----
+![Lighthouse](static/images/lighthouse.png)
 
-Happy coding!
+## Bugs
+
+    - No bugs detected.
+
+## Unfixed bugs
+
+    - No unfixed bugs.
+
+## Technologies
+
+* **Languages used**
+
+    - HTML
+    - CSS
+    - Javascript
+    - Python+Django
+
+## Programs and apps
+
+    - Gitpod, used for code writing.
+    - Github, store data.
+    - Git, version control.
+    - PostgreSQL, database.
+    - Cloudinary, store images.
+    - Summernote, WYSIWYG editor.
+    - Bootstrap, css framework.
+    - Crispy forms, manage django forms.
+    - Allauth, account management.
+    - Heroku, cloud deployment platform.
+
+## Deployment
+
+* **Site deployed to Heroku. The steps are:**
+
+Detailed instructions found here (credit: Code Institute):
+https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf
+
+    - Create an account with Heroku.
+    - Create a new app whilst logged in.
+    - Add Buildpacks 'Python' and 'NodeJS'.
+    - Connect your GitHub repository via "Connect to GitHub".
+    - Set up your config vars (info in doc above).
+    - Enable either "Automatic Deploys" or do it manually.
+    - The site link: https://daytradingblog.herokuapp.com/
+
+
+## Credits
+
+In order to have time to do a large project like this in such a short time, I had to follow the Code Institute's guide to be able to finish this website, and get it up and running without problems.
+Credit to my brother Daniel Junttila for working with me along the project.
+To complete this 'TraderPro blog', I used Code Institute student template: https://github.com/Code-Institute-Org/gitpod-full-template
+<br/><br/>
+
+* **Content**
+
+    - All blogpost content found at: https://en.wikipedia.org/wiki/Day_trading
+    - Fonts (Lato, Open Sans) imported from https://fonts.google.com/
+    - Color palette picked from https://colorhunt.co/
+<br/><br/>
+
+* **Media**
+
+    - All the images taken from https://www.pexels.com/
+    - The icons is taken from https://fontawesome.com/
+    - Used GIMP for scaling the images.
+<br/><br/>
+
+* **Colors and fonts**
+
+    - Background color: #F9FAFC
+    - Body font color: #000000
+    - Heading font color: #000000
+    - Button color: ##F08A5D
+    - Fonts used: 'Lato' and 'Open Sans'.
+<br/><br/>
+
+[Back to Top](#TraderPro)
