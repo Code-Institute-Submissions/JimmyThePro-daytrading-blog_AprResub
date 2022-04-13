@@ -98,6 +98,9 @@
                         </span> wrote:
                     </p>
                     {{ comment.body | linebreaks }}
+                    {% if user.username == comment.name %}
+                    <a class="delete_comment" href="{% url 'delete_comment' comment.id %}">Delete comment</a>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
