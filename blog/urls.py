@@ -9,6 +9,5 @@ urlpatterns = [
     path(
         "delete/<int:id>",
         views.delete_own_comment,
-        name="delete_comment",
-    ),
+        name='delete_comment'),
 ]
