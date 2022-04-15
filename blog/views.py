@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post, Comment
+from .models import Post, Comment, Contact
 from .forms import CommentForm
 
 
@@ -76,6 +76,29 @@ class PostDetail(View):
                 'comment_form': CommentForm()
             },
         )
+
+
+class ContactPage(View):
+    """
+    Contact class.
+    """
+    def contact_us(self, request, slug, *args, **kwargs):
+        """
+        Contact.
+        """
+        if request.method == 'POST':
+            contact = Contact()
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            subject = request.POST.get('subject')
+            message = request.POST.get('message')
+            contact.name = name
+            contact.email = email
+            contact.subject = subject
+            contact.message = message
+            contact.save()
+            return HttpResponseRedirect("<h1>Thanks for contacting us!</h1>")
+        return render(request, 'contact_us.html')
 
 
 class PostLike(View):
