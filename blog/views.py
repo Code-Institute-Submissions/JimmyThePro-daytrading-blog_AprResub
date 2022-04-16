@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
@@ -82,22 +82,28 @@ class ContactPage(View):
     """
     Contact class.
     """
+    def post(self, request, *args, **kwargs):
+        """
+        Post.
+        """
+        contact_form = Contact.objects.create(
+            name=request.POST["name"],
+            email=request.POST["email"],
+            subject=request.POST["subject"],
+            message=request.POST["message"],
+        )
+        contact_form.save()
+        messages.add_message(
+            request,
+            messages.SUCCESS,
+            'Thank you for contacting us! We will get in touch shortly.',
+        )
+        return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
+
     def get(self, request):
         """
         Contact.
         """
-        if request.method == 'POST':
-            contact = Contact()
-            name = request.POST.get('name')
-            email = request.POST.get('email')
-            subject = request.POST.get('subject')
-            message = request.POST.get('message')
-            contact.name = name
-            contact.email = email
-            contact.subject = subject
-            contact.message = message
-            contact.save()
-            return HttpResponse("<h1>Thanks for contacting us!</h1>")
         return render(request, 'contact_us.html')
 
 
