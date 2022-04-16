@@ -99,8 +99,8 @@
                     </p>
                     {{ comment.body | linebreaks }}
                     {% if user.username == comment.name %}
-                    <a class="delete_comment" href="{% url 'delete_comment' comment.id %}">Delete comment</a>
-                    <a class="edit_comment" href="{% url 'edit_comment' comment.id %}">Edit comment</a>
+                    <a class="delete_comment" href="{% url 'delete_comment' comment.id %}">Delete</a>
+                    <a class="edit_comment" href="{% url 'edit_comment' comment.id %}">Edit</a>
                     {% endif %}
                 </div>
                 {% endfor %}

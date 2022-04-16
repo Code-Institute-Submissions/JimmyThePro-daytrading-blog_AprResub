@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<section class="col-md-10 card mb-4 mt-3 left top mx-auto">
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Edit your comment:</h2>
+    <p class="text-center w-responsive mx-auto mb-5">Edit</p>
+
+    <div class="col-md-10 mx-auto">
+        <div class="container">
+            <form id="contact" name="contact" action="{% url 'edit_comment' %}" method="POST"> 
+
+                {{ comment.body | linebreaks }}
+                {% if user.username == comment.name %}
+
+                <div class="text-center text-md-left mt-3">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg">Update comment</button>
+                </div>
+                {% endif %}
+
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
