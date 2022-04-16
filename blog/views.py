@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import Post, Comment, Contact
 from .forms import CommentForm
 
@@ -82,7 +82,7 @@ class ContactPage(View):
     """
     Contact class.
     """
-    def contact_us(self, request, slug, *args, **kwargs):
+    def get(self, request):
         """
         Contact.
         """
@@ -97,7 +97,7 @@ class ContactPage(View):
             contact.subject = subject
             contact.message = message
             contact.save()
-            return HttpResponseRedirect("<h1>Thanks for contacting us!</h1>")
+            return HttpResponse("<h1>Thanks for contacting us!</h1>")
         return render(request, 'contact_us.html')
 
 
@@ -136,3 +136,19 @@ def delete_own_comment(request, id=None):
         return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
     else:
         messages.add_message(request, messages.ERROR, 'An error occurred')
+
+
+def edit_own_comment(request, id=None):
+    """
+    Edit comment.
+    """
+    if request.user.is_authenticated and request.method == 'POST':
+        comment_id = request.POST['comment_id']
+        edit_comment = request.POST['edit_comment']
+        comment = get_object_or_404(Comment, id=id)
+        bc = comment.objects.filter(pk=comment_id).first()
+        bc.content = edit_comment
+        bc.save()
+        return HttpResponse('success')
+    else:
+        return HttpResponse('Request method is not POST')
