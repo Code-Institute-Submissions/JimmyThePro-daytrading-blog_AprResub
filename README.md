@@ -3,16 +3,16 @@
 This blog will have blogposts/information about daytrading added by me weekly, so this blog will have alot of posts about daytrading in the future... so bookmark this blog now: https://daytradingblog.herokuapp.com/
 <br/><br/>
 
-![blog will work in any media browser](static/images/responsive_design.png)
+![blog will work in any media browser](static/images/daytrading_blog.png)
 <br/><br/>
 
 ## Features
 
-When a user performs an action on the site, he/she will get an alert message at top of page that automatically disappear in 3,5 sec. (actions: signup, login, logout, commenting blogpost)
+When a user performs an action on the site, he/she will get an alert message at top of page that automatically disappear in 3,5 sec. (actions: signup, login, logout, comment blogpost, delete blogcomment, edit blogcomment)
 
 * **Header navigation bar**
 
-    - The navigation bar includes links to Home, Signup and Login (and a logo-link), and also a short message.
+    - The navigation bar includes links to Home, Contact, Signup and Login (and a logo-link), and also a short message.
     - This full responsive navigation bar allow all users to easy navigate to all pages on this site, without the need of the "back" button.
     - This bar also have a hover effect that change color with mousehover.
 
@@ -69,6 +69,20 @@ When a user performs an action on the site, he/she will get an alert message at 
 ![logout image](static/images/logout.png)
 <br/><br/>
 
+* **Edit comment**
+
+    - When a user want to edit their own comment, he/she can click on "Edit" button under their comment.
+
+![logout image](static/images/edit_comment.png)
+<br/><br/>
+
+* **Delete comment**
+
+    - When a user want to delete their own comment, he/she can click on "Delete" button under their comment.
+
+![logout image](static/images/delete_comment.png)
+<br/><br/>
+
 * **Blogpost page**
 
     - First there is a blogpost image that is relevant to the topic.
@@ -76,19 +90,40 @@ When a user performs an action on the site, he/she will get an alert message at 
     - Below the title the user can read the full blogpost text.
     - And below the text there is a 'like-button' that also show the like-counts (formed as a heart), and a 'comment' count. Logged in users can 'like' and 'unlike' a blogpost, and when user comment a blopgpost it will add +1 to the comment count.
     - At bottom there's a comment section. Here will all the comments that are posted on a specific blogpost be shown. If a user is logged in, he/she can write a comment (a comment need to be approved by an admin user). If user is not logged in, he/she can only read the comments (not post a comment).
+    - The user can also delete/edit their own comment. Buttons for this are under the users comments.
 
 ![blogpost image](static/images/blogpost_image.png)
 
 ![blogpost text and like/comment count](static/images/blogpost_text.png)
 
-![blogpost comments](static/images/comment_section.png)
+![blogpost comments](static/images/delete_edit_comment.png)
 <br/><br/>
 
-## Wireframes
+* **Contact page**
 
-I followed this design: https://startbootstrap.com/previews/clean-blog
+    - If the user want to contact this site, he/she can input their information and press send.
+    - The contact information the user send, can be found in django admin panel under "Contacts".
+
+![blogpost text and like/comment count](static/images/contact_us.png)
+
+## Wireframes and design
+
+I followed this design for a rough idea how I wanted the site to look like: https://startbootstrap.com/previews/clean-blog
 <br/>
-(I did a few changes to the better)
+(I did a few changes to the better.)
+
+* **Colors and fonts**
+
+    - Background color: #F9FAFC
+    - Logo color: #4A4A4F and #F08A5D
+    - Body font color: #000000
+    - Button color: #F08A5D
+    - Heading font color: #000000
+    - Fonts used: 'Lato' and 'Open Sans'.
+
+I chose colors that clearly marks and seperate parts of the site, so the user easily can navigate throughout all pages. The typograpghy I chose is easily readable and give a professional look. I chose a few bootstrap codes, because of the 'fully responsive' aspect (https://getbootstrap.com/)
+
+![blogpost text and like/comment count](static/images/wireframe.png)
 <br/><br/>
 
 ## Django administration
@@ -102,8 +137,9 @@ I followed this design: https://startbootstrap.com/previews/clean-blog
     - Delete comments: As an admin, you can delete comments whether they are approved or not.
     - Filter blog posts: As an admin, you can filter the blog posts by date.
     - Delete users: As an admin, you can delete users if you need to.
+    - Submitted contacts: As an admin, you can view messages sent by users, through the 'site contact form'.
 
-![django admin panel](static/images/django.png)
+![django admin panel](static/images/django_admin.png)
 <br/><br/>
 
 ## UX
@@ -117,6 +153,8 @@ I bet the user will read all the blog posts.
 NEW USER: I am interested in Daytrading and wanna know more about this lifestyle!<br/>
 RETURNING USER: User can come back weekly, as new blogposts are added once a week.
 
+(All 'CRUD' functionalities is available for users in the front end.)
+
     - Site pagination: As a Site User I can view a list of posts so that I can select which post to view.
     - View post list: As a Site User I can view a list of posts so that I can select one to read.
     - Open a post: As a Site User I can click on a post so that I can read the full text.
@@ -125,12 +163,14 @@ RETURNING USER: User can come back weekly, as new blogposts are added once a wee
     - Account registration: As a Site User I can register an account so that I can comment and like.
     - Comment on a post: As a Site User I can leave comments on a post so that I can be involved in the conversation. (comments need to be approved by an admin)
     - Like/Unlike: As a Site User I can like or unlike a post so that I can interact with the content.
+    - Edit comment: As a Site User I can edit my own comments so that I can change my oppinion.
+    - Delete comment: As a Site user I can delete my own comment so that it dissapears from the site.
+
 
 * **Future updates**
 
-    - Add a contact section, so users easily can contact me using a form.
     - Add alot more blogposts, and a filter so users easily can sort the blogposts how they want.
-    - Add more features for the users, such as deleting/change their own comment posts, delete their accounts etc.
+    - Add a function so that a user can edit/delete their accounts etc.
 <br/><br/>
 
 * **Site goal**
@@ -146,11 +186,11 @@ RETURNING USER: User can come back weekly, as new blogposts are added once a wee
 
 ## Testing
 
-Manually tested all links, buttons on every page in different browsers with no errors. Create new account, login, logout and post a comment works perfectly.
+Manually tested all links, buttons on every page in different browsers with no errors. Create new account, login, logout, edit comment, delete comment, and post a comment works perfectly.
 <br/> 
 Everything looks OK (and fully responsive).
 <br/><br/>
-In admin panel everything works - approve comments, delete comments, create blogposts, delete blogposts, see all user/admin accounts. There's even a 'filter' on the right, so you easily can navigate.
+In admin panel everything works - approve comments, delete comments, create blogposts, delete blogposts, view contact messages, see all user/admin accounts. There's even a 'filter' on the right, so you easily can navigate.
 <br/><br/>
 
 * **Validator testing**
@@ -223,7 +263,8 @@ https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pd
 
 In order to have time to do a large project like this in such a short time (8 days, yepp you read it correct, do I have the student record? :)), I had to follow the Code Institute's guide (big credit) to be able to finish this website, and get it up and running without problems.
 Credit to my brother Daniel Junttila for working with me along the project.
-To complete this 'TraderPro blog', I used Code Institute student template: https://github.com/Code-Institute-Org/gitpod-full-template
+To complete this 'TraderPro blog', I used Code Institute student template (and from 'Code Institute Tutor' support): https://github.com/Code-Institute-Org/gitpod-full-template
+Also credit to "B Learning Club" for this tutorial on how to build a contact form: https://www.youtube.com/watch?v=lSgRWA4PMt4&list=LL&index=3
 <br/><br/>
 
 * **Content**

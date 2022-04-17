@@ -138,12 +138,6 @@ body {
     text-transform: uppercase;
 }
 
-.delete_comment,
-.edit_comment {
-    color: #F08A5D;
-    padding-right: 10px;
-}
-
 /* buttons */
 
 .btn-signup {

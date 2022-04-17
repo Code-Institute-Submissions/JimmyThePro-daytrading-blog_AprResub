@@ -146,7 +146,7 @@ def delete_own_comment(request, id=None):
 
 def edit_own_comment(request, comment_id):
     """
-    Edit comment
+    Edit own comment.
     """
     comment = get_object_or_404(Comment, id=comment_id)
     if request.method == 'POST':
