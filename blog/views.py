@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from .models import Post, Comment, Contact
 from .forms import CommentForm
 
@@ -137,32 +137,29 @@ def delete_own_comment(request, id=None):
         messages.add_message(
             request,
             messages.SUCCESS,
-            'Your comment is deleted',
+            'Your comment is deleted.',
         )
         return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
     else:
         messages.add_message(request, messages.ERROR, 'An error occurred')
 
 
-class EditComment(View):
+def edit_own_comment(request, comment_id):
     """
-    Edit.
+    Edit comment
     """
-    def get(self, request):
-        """
-        Get.
-        """
-        return render(request, 'edit_comment.html')
-
-    def post(self, request, *args, **kwargs):
-        """
-        Edit own comment.
-        """
-        if request.user.is_authenticated and request.method == 'POST':
-            comment_id = request.POST['comment_id']
-            edit_comment = request.POST['edit_comment']
-            comment = get_object_or_404(Comment, id=id)
-            bc = comment.objects.filter(pk=comment_id).first()
-            bc.content = edit_comment
-            bc.save()
-            return HttpResponseRedirect(reverse('edit_comment'))
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                "Your comment has been updated.",
+            )
+    form = CommentForm(instance=comment)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_comment.html', context)

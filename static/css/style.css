@@ -141,12 +141,7 @@ body {
 .delete_comment,
 .edit_comment {
     color: #F08A5D;
-    padding-right: 4px;
-}
-
-.delete_comment:hover,
-.edit_comment:hover {
-    color:#ff4000;
+    padding-right: 10px;
 }
 
 /* buttons */
